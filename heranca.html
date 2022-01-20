@@ -1,0 +1,91 @@
+<script>
+
+    // Rererências: https://www.w3schools.com/js/js_class_inheritance.asp
+
+    // Cria a classe 'Car'
+    class Car {
+
+        // Atributos (Características) -> Propriedades
+        brand;
+        model;
+
+        // Métodos -> Ações que objeto pode executar.
+
+        /**
+         * Métodos get e set:
+         *   get -> Obter o valor do atributo.
+         *   set -> Atribuir/alterar o valor do atributo.
+         */
+
+        setBrand(brand) { this.brand = brand; }
+        getBrand() { return this.brand; }
+        setModel(model) { this.model = model; }
+        getModel() { return this.model; }
+    }
+
+    /**
+     * A nova classe 'Utilit' cria objetos novos porém com os mesmos
+     * atributos e métodos da classe estendida --> Car.
+     */
+    class Utilit extends Car {
+
+        // Atributos (Características) -> Propriedades
+
+        /**
+         * Além desse atributos os atributos de 'Car' também funcionam aqui.
+         */
+        axis;
+        weight;
+
+        // Métodos -> Ações que objeto pode executar.
+        /**
+         * Além desse métodos os métodos de 'Car' também funcionam aqui.
+         */
+        setAxis(axis) { this.axis = axis; }
+        getAxis() { return this.axis; }
+        setWeight(weight) { this.weight = weight; }
+        getWeight() { return this.weight; }
+    }
+
+    class Sport extends Car {
+        velocity;
+        cilinders;
+
+        setVelocity(velocity) { this.velocity = velocity; }
+        getVelocity() { return this.velocity; }
+        setCilinders(cilinders) { this.cilinders = cilinders; }
+        getCilinders() { return this.cilinders; }
+    }
+
+    // Cria objeto instanciando a classe 'Car'
+    var carro1 = new Car();
+
+    // Setando os atributos usando os 'setters'.
+    carro1.setBrand('Fiat');
+    carro1.setModel('147');
+
+    // Exibindo o objeto no console.
+    console.log(carro1);
+
+    // Cria objeto instanciando a classe 'Car'
+    var carro2 = new Utilit();
+
+    // Setando os atributos usando os 'setters'.
+    carro2.setBrand("Mercedes");
+    carro2.setModel("1302");
+    carro2.setAxis(3);
+    carro2.setWeight(3000);
+
+    // Exibe tudo sobre o objeto
+    console.log(carro2);
+
+    var carro3 = new Sport();
+    carro3.setBrand('Ferrari');
+    carro3.setModel('Testarosa');
+    carro3.setVelocity(450);
+    carro3.setCilinders(8);
+
+    // Exibe tudo sobre o objeto
+    console.log(carro3);
+
+</script>
