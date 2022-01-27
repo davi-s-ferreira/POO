@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <script>
+        class Jogador {
+            #nome;
+            #nascimento;
+            #nacionalidade;
+            #altura;
+            #peso;
+
+            constructor(nome) {
+                this.#nome = nome;
+            }
+
+            setNome(nome) { this.#nome = nome; }
+            setNascimento(nascimento) { this.#nascimento = nascimento; }
+            setNacionalidade(nacionalidade) { this.#nacionalidade = nacionalidade; }
+            setAltura(altura) { this.#altura = altura; }
+            setPeso(peso) { this.#peso = peso; }
+
+            getNome() { return this.#nome; }
+            getNascimento() { return this.#nascimento; }
+            getNacionalidade() { return this.#nacionalidade; }
+            getAltura() { return this.#altura; }
+            getPeso() { return this.#peso; }
+            getDadosJogador() {
+                return {
+                    nome: this.getNome(),
+                    nascimento: this.getNascimento(),
+                    nacionalidade: this.getNacionalidade(),
+                    altura: this.getAltura(),
+                    peso: this.getPeso(),
+
+                }
+            }
+
+        }
+
+        var tiquinho = new Jogador('Joca da Silva');
+        tiquinho.setNascimento(new Date(1980, 11 - 1, 25));
+        tiquinho.setNacionalidade('brasileiro');
+        tiquinho.setAltura(1.78);
+        tiquinho.setPeso(78.5);
+
+        if (typeof tiquinho.getDadosJogador() === 'object')
+            console.log(tiquinho.getDadosJogador());
+        else
+            console.error('Oooops! Algo errado não está certo.');
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
